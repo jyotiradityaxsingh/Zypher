@@ -2,6 +2,7 @@
 #include <string>
 #include "../include/Caesar_Cipher.h"
 #include "../include/Atbash_Cipher.h"
+#include "../include/ROT13_Cipher.h"  
 
 using namespace std;
 
@@ -14,16 +15,17 @@ int main() {
     cout << "> ";
     cin >> choice;
 
-    if (choice == 1 || choice == 2) {  
-        cout << "*** Ciphers:  ***" << endl;
+    if (choice == 1 || choice == 2) {
+        cout << "*** Ciphers: ***" << endl;
         cout << "1> Caesar Cipher" << endl;
         cout << "2> Atbash Cipher" << endl;
+        cout << "3> ROT13 Cipher" << endl;  
 
         int usrInput = 0;
         cout << "Enter A Cipher: ";
         cin >> usrInput;
 
-        if (usrInput == 1) {
+        if (usrInput == 1) {  
             int key = 0;
             string txt;
 
@@ -40,7 +42,7 @@ int main() {
                 caesarDecryption(txt, key);  
             }
 
-        } else if (usrInput == 2) {
+        } else if (usrInput == 2) {  
             string txt;
 
             cout << "Enter Text: ";
@@ -53,8 +55,21 @@ int main() {
                 decryption(txt);  
             }
 
+        } else if (usrInput == 3) {  
+            string txt;
+
+            cout << "Enter Text: ";
+            cin.ignore();  
+            getline(cin, txt);  
+
+            if (choice == 1) {
+                rot13Encryption(txt);  
+            } else if (choice == 2) {
+                rot13Decryption(txt);  
+            }
+
         } else {
-            cout << "Invalid Choice. Please Select Either Caesar Cipher or Atbash Cipher" << endl;
+            cout << "Invalid Choice. Please Select Either Caesar Cipher, Atbash Cipher, or ROT13 Cipher" << endl;
         }
 
     } else {
