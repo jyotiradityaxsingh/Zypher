@@ -3,7 +3,8 @@
 #include "../include/Caesar_Cipher.h"
 #include "../include/Atbash_Cipher.h"
 #include "../include/ROT13_Cipher.h"
-#include "../include/Vigenere_Cipher.h"  
+#include "../include/Vigenere_Cipher.h"
+#include "../include/Polybius_Cipher.h"  
 
 using namespace std;
 
@@ -22,6 +23,7 @@ int main() {
         cout << "2> Atbash Cipher" << endl;
         cout << "3> ROT13 Cipher" << endl;  
         cout << "4> Vigenère Cipher" << endl; 
+        cout << "5> Polybius Cipher" << endl;  
 
         int usrInput = 0;
         cout << "Enter A Cipher: ";
@@ -86,8 +88,21 @@ int main() {
                 decryption(txt, key);  
             }
 
+        } else if (usrInput == 5) {  
+            string txt;
+
+            cout << "Enter Text: ";
+            cin.ignore();
+            getline(cin, txt);
+
+            if (choice == 1) {
+                encryption(txt);  
+            } else if (choice == 2) {
+                decryption(txt);  
+            }
+
         } else {
-            cout << "Invalid Choice. Please Select Either Caesar Cipher, Atbash Cipher, ROT13 Cipher, or Vigenère Cipher" << endl;
+            cout << "Invalid Choice. Please Select Either Caesar Cipher, Atbash Cipher, ROT13 Cipher, Vigenère Cipher, or Polybius Cipher" << endl;
         }
 
     } else {
