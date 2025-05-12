@@ -1,161 +1,142 @@
-# Zypher - Encryption & Decryption Tool
+Sure! Here’s a basic `README.md` file based on your provided C++ code. This will help someone understand how to use your encryption/decryption program and what each part of it does.
 
-Zypher Is A C++ Program That offers Various Encryption And Decryption Algorithms For Securing Text. It Includes A Collection of Classic Ciphers Such As The Caesar Cipher, Atbash Cipher, ROT13 Cipher, Vigenère Cipher, And Polybius Cipher (Both Standard And Custom Variants).
+---
+
+# ZYPHER - Encryption & Decryption Tool
+
+ZYPHER is a C++ program that offers various encryption and decryption algorithms for securing text. It includes a collection of classic ciphers such as the Caesar Cipher, Atbash Cipher, ROT13 Cipher, Vigenère Cipher, and Polybius Cipher (both standard and custom variants).
 
 ## Features
 
-    1. Caesar Cipher: A Substitution Cipher That Shifts Each Letter of The Plaintext By A Certain Number of Positions Down or Up The Alphabet
-    2. Atbash Cipher: A Substitution Cipher That Reverses The Alphabet (A Becomes Z, B Becomes Y, And So On)
-    3. ROT13 Cipher: A Special Case of The Caesar Cipher, Where Each Letter Is Shifted By 13 Positions
-    4. Vigenère Cipher: A Polyalphabetic Substitution Cipher That Uses A Keyword To Shift Letters In The Plaintext
-    5. Polybius Cipher (Standard): A Cipher That Uses A 5x5 Square To Map Letters To Pairs of Digits
-    6. Polybius Cipher (Custom): A Variant of The Polybius Cipher Where The 5x5 Square Can Be Customized
+- **Caesar Cipher**: A substitution cipher that shifts each letter of the plaintext by a certain number of positions down or up the alphabet.
+- **Atbash Cipher**: A substitution cipher that reverses the alphabet (A becomes Z, B becomes Y, and so on).
+- **ROT13 Cipher**: A special case of the Caesar cipher, where each letter is shifted by 13 positions.
+- **Vigenère Cipher**: A polyalphabetic substitution cipher that uses a keyword to shift letters in the plaintext.
+- **Polybius Cipher (Standard)**: A cipher that uses a 5x5 square to map letters to pairs of digits.
+- **Polybius Cipher (Custom)**: A variant of the Polybius cipher where the 5x5 square can be customized.
 
 ## Getting Started
 
-To Use This Program, Compile The C++ Source Code And Execute The Resulting Binary. The Program Will Ask For User Input And Guide You Through The Encryption or Decryption Process.
+To use this program, compile the C++ source code and execute the resulting binary. The program will ask for user input and guide you through the encryption or decryption process.
 
-#### Prerequisites
+### Prerequisites
 
-You Need A C++ Compiler (Example, GCC or Clang) To Build And Run This Program. Ensure The Following Files Are Present And Correctly Configured:
+You need a C++ compiler (e.g., GCC or Clang) to build and run this program. Ensure the following files are present and correctly configured:
 
-    Caesar_Cipher.h
+- `Caesar_Cipher.h`
+- `Atbash_Cipher.h`
+- `ROT13_Cipher.h`
+- `Vigenere_Cipher.h`
+- `Polybius_Cipher.h`
+- `Polybius_Cipher_Custom.h`
 
-    Atbash_Cipher.h
+### Compilation
 
-    ROT13_Cipher.h
+To compile the program, run the following command:
 
-    Vigenère_Cipher.h
-
-    Polybius_Cipher.h
-
-    Polybius_Cipher_Custom.h
-
-#### Compilation
-
-To Compile The Program, Run The Following Command:
-
-```
-g++ -o ZYPher main.cpp -I ../include
+```bash
+g++ -o ZYPHER main.cpp -I ../include
 ```
 
-This Assumes The Source Code Is In `main.cpp` And The Necessary Header Files Are In The `../include` Directory
-Running The Program
+This assumes the source code is in `main.cpp` and the necessary header files are in the `../include` directory.
 
-To Run The Compiled Binary, Execute:
+### Running the Program
 
-```
-./Zypher
-```
+To run the compiled binary, execute:
 
-You Will Be Presented With A Menu To Either Encrypt or Decrypt Text.
-
-#### Usage
-
-Once The Program Runs, It Presents You With A Menu For Either Encryption or Decryption:
-
-    Choose The Mode:
-
-```
-        1 > Encryption
-
-        2 > Decryption
+```bash
+./ZYPHER
 ```
 
-    Choose A Cipher:
+You will be presented with a menu to either **Encrypt** or **Decrypt** text.
 
-```
-        1 > Caesar Cipher
+## Usage
 
-        2 > Atbash Cipher
+Once the program runs, it presents you with a menu for either **Encryption** or **Decryption**:
 
-        3 > ROT13 Cipher
+1. **Choose the mode**:
 
-        4 > Vigenère Cipher
+   - `1 > Encryption`
+   - `2 > Decryption`
 
-        5 > Polybius Cipher (Standard)
+2. **Choose a cipher**:
 
-        6 > Polybius Cipher (Custom)
-```
+   - `1 > Caesar Cipher`
+   - `2 > Atbash Cipher`
+   - `3 > ROT13 Cipher`
+   - `4 > Vigenère Cipher`
+   - `5 > Polybius Cipher (Standard)`
+   - `6 > Polybius Cipher (Custom)`
 
-    Input Text:
+3. **Input text**:
 
-        Enter The Text You Want To Encrypt or Decrypt.
+   - Enter the text you want to encrypt or decrypt.
 
-    Input Additional Parameters:
+4. **Input additional parameters**:
 
-        For Caesar Cipher, You'll Need To Provide A Key (A Shift Value).
+   - For **Caesar Cipher**, you'll need to provide a key (a shift value).
+   - For **Vigenère Cipher**, you'll need to provide a keyword.
+   - For **Polybius Ciphers**, just enter the text, as no additional parameters are required.
 
-        For Vigenère Cipher, You'll Need To Provide A Keyword.
+5. **Get result**:
 
-        For Polybius Ciphers, Just Enter The Text, As No Additional Parameters Are Required.
+   - The program will output the result of the encryption or decryption based on your input.
 
-    Get Result:
+### Example Walkthrough
 
-        The Program Will Output The Result of The Encryption or Decryption Based On Your Input.
+Here’s how you might encrypt text using the **Caesar Cipher**:
 
-## Example Walkthrough
+1. Choose **Encryption**.
+2. Select **Caesar Cipher**.
+3. Input your text, for example: `HELLO WORLD`.
+4. Enter a shift key, for example: `3`.
+5. The program will output the encrypted text (with the key you entered).
 
-Here’s How You Might Encrypt Text Using The Caesar Cipher:
+### Error Handling
 
-    Choose Encryption.
-
-    Select Caesar Cipher.
-
-    Input Your Text, For Example: `HELLO WORLD`.
-
-    Enter A Shift Key, For Example: `3`.
-
-    The Program Will Output The Encrypted Text (With The Key You Entered).
-
-## Error Handling
-
-    If An Invalid Choice Is Entered (Either For The Cipher or For The Encryption/Decryption Mode), The Program Will Prompt The User To Select A Valid Option.
-
-    If The User Enters Invalid Text or A Key, Appropriate Error Messages Will Be Displayed.
+- If an invalid choice is entered (either for the cipher or for the encryption/decryption mode), the program will prompt the user to select a valid option.
+- If the user enters invalid text or a key, appropriate error messages will be displayed.
 
 ## Available Ciphers
 
-#### Caesar Cipher
+### 1. **Caesar Cipher**
 
-**Description:** A Simple Substitution Cipher Where Each Letter In The Plaintext Is Shifted By A Certain Number of Positions In The Alphabet.
+- **Description**: A simple substitution cipher where each letter in the plaintext is shifted by a certain number of positions in the alphabet.
+- **Usage**: Enter the text and a shift key to encrypt or decrypt.
 
-Usage: Enter The Text And A Shift Key To Encrypt or Decrypt.
+### 2. **Atbash Cipher**
 
-#### Atbash Cipher
+- **Description**: A substitution cipher where the alphabet is reversed. `A` becomes `Z`, `B` becomes `Y`, and so on.
+- **Usage**: Enter the text to encrypt or decrypt.
 
-**Description:** A Substitution Cipher Where The Alphabet Is Reversed. A Becomes Z, B Becomes Y, And So On.
+### 3. **ROT13 Cipher**
 
-Usage: Enter The Text To Encrypt or Decrypt.
+- **Description**: A special case of the Caesar cipher with a fixed shift of 13 positions.
+- **Usage**: Enter the text to encrypt or decrypt (ROT13 is its own inverse).
 
-#### ROT13 Cipher
+### 4. **Vigenère Cipher**
 
-**Description:** A Special Case of The Caesar Cipher With A Fixed Shift of 13 Positions.
+- **Description**: A polyalphabetic cipher that uses a keyword for encryption and decryption. The key repeats over the plaintext.
+- **Usage**: Enter the text and a keyword to encrypt or decrypt.
 
-Usage: Enter The Text To Encrypt or Decrypt (ROT13 Is Its Own Inverse).
+### 5. **Polybius Cipher (Standard)**
 
-#### Vigenère Cipher
+- **Description**: A cipher that uses a 5x5 grid of letters. Each letter is represented by a pair of digits (row and column).
+- **Usage**: Enter the text to encrypt or decrypt.
 
-**Description:** A Polyalphabetic Cipher That Uses A Keyword For Encryption And Decryption. The Key Repeats Over The Plaintext.
+### 6. **Polybius Cipher (Custom)**
 
-Usage: Enter The Text And A Keyword To Encrypt or Decrypt.
-
-#### Polybius Cipher (Standard)
-
-**Description:** A Cipher That Uses A 5x5 Grid of Letters. Each Letter Is Represented By A Pair of Digits (Row And Column).
-
-Usage: Enter The Text To Encrypt or Decrypt.
-
-#### Polybius Cipher (Custom)
-
-**Description:** Similar To The Standard Polybius Cipher But With A Customizable 5x5 Grid.
-
-Usage: Enter The Text To Encrypt or Decrypt.
+- **Description**: Similar to the standard Polybius cipher but with a customizable 5x5 grid.
+- **Usage**: Enter the text to encrypt or decrypt.
 
 ## Contributing
 
-Feel Free To Fork This Repository And Contribute Enhancements, Bug Fixes, or New Ciphers. Pull Requests Are Welcome!
+Feel free to fork this repository and contribute enhancements, bug fixes, or new ciphers. Pull requests are welcome!
 
 ## License
 
-This Project Is Licensed Under The MIT License
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+---
+
+Let me know if you need any more details in the README or if there's anything specific you'd like to add!
