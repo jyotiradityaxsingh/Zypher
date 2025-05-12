@@ -1,7 +1,3 @@
-Sure! Here’s a basic `README.md` file based on your provided C++ code. This will help someone understand how to use your encryption/decryption program and what each part of it does.
-
----
-
 # ZYPHER - Encryption & Decryption Tool
 
 ZYPHER is a C++ program that offers various encryption and decryption algorithms for securing text. It includes a collection of classic ciphers such as the Caesar Cipher, Atbash Cipher, ROT13 Cipher, Vigenère Cipher, and Polybius Cipher (both standard and custom variants).
@@ -135,8 +131,4 @@ Feel free to fork this repository and contribute enhancements, bug fixes, or new
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
----
-
-Let me know if you need any more details in the README or if there's anything specific you'd like to add!
+This project is licensed under the MIT License
