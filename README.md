@@ -1,3 +1,5 @@
+![Banner](Resources/Banner%20(Zypher).png)
+
 # ZYPHER - Encryption & Decryption Tool
 
 ZYPHER is a C++ program that offers various encryption and decryption algorithms for securing text. It includes a collection of classic ciphers such as the Caesar Cipher, Atbash Cipher, ROT13 Cipher, Vigenère Cipher, and Polybius Cipher (both standard and custom variants).
