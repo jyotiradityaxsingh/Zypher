@@ -1,6 +1,6 @@
 #include <iostream>
 #include <string>
-#include "../include/Caesar_Cipher.h"
+#include "../include/Caesar_Cipher.h" 
 #include "../include/Atbash_Cipher.h"
 #include "../include/ROT13_Cipher.h"
 #include "../include/Vigenere_Cipher.h"
@@ -56,9 +56,9 @@ int main() {
             getline(cin, txt);  
 
             if (choice == 1) {
-                encryption(txt);  
+                atbashEncrypt(txt);  
             } else if (choice == 2) {
-                decryption(txt);  
+                atbashDecrypt(txt);  
             }
 
         } else if (usrInput == 3) {  
@@ -85,9 +85,9 @@ int main() {
             getline(cin, key);  
 
             if (choice == 1) {
-                encryption(txt, key);  
+                vigenereEncrypt(txt, key);  
             } else if (choice == 2) {
-                decryption(txt, key);  
+                vigenereDecrypt(txt, key);  
             }
 
         } else if (usrInput == 5) {  
@@ -98,9 +98,9 @@ int main() {
             getline(cin, txt);
 
             if (choice == 1) {
-                encryption(txt);  
+                defaultPolybiusEncrypt(txt);  
             } else if (choice == 2) {
-                decryption(txt);  
+                defaultPolybiusDecrypt(txt);  
             }
 
         } else if (usrInput == 6) {  
@@ -111,9 +111,9 @@ int main() {
             getline(cin, txt);
 
             if (choice == 1) {
-                encryption(txt);  
+                customPolybiusEncrypt(txt);  
             } else if (choice == 2) {
-                decryption(txt);  
+                customPolybiusDecrypt(txt);  
             }
 
         } else {

@@ -20,13 +20,19 @@ void generateCustomPolybiusSquare(const string& alphabet, map<char, string>& pol
     }
 }
 
-void generateReversePolybiusSquare(const map<char, string>& polybiusSquare, map<string, char>& reversePolybiusSquare) {
+void generateReversePolybiusSquare(map<string, char>& reversePolybiusSquare, const map<char, string>& polybiusSquare) {
     for (const auto& entry : polybiusSquare) {
         reversePolybiusSquare[entry.second] = entry.first;
     }
 }
 
-void encryption(const string& txt, const map<char, string>& polybiusSquare) {
+void customPolybiusEncrypt(string& txt) {
+    string alphabet = "ABCDEFGHIKLMNOPQRSTUVWXYZ";  
+    int rows = 5, cols = 5;  
+
+    map<char, string> polybiusSquare;
+    generateCustomPolybiusSquare(alphabet, polybiusSquare, rows, cols);
+
     string encryptedText = "";
     for (char c : txt) {
         c = toupper(c);  
@@ -36,10 +42,21 @@ void encryption(const string& txt, const map<char, string>& polybiusSquare) {
             encryptedText += c;  
         }
     }
-    cout << "Encrypted Text: " << encryptedText << endl;
+
+    txt = encryptedText;  
+    cout << "Encrypted Text: " << txt << endl;
 }
 
-void decryption(const string& txt, const map<string, char>& reversePolybiusSquare) {
+void customPolybiusDecrypt(string& txt) {
+    string alphabet = "ABCDEFGHIKLMNOPQRSTUVWXYZ";  
+    int rows = 5, cols = 5;  
+
+    map<char, string> polybiusSquare;
+    generateCustomPolybiusSquare(alphabet, polybiusSquare, rows, cols);
+
+    map<string, char> reversePolybiusSquare;
+    generateReversePolybiusSquare(reversePolybiusSquare, polybiusSquare);
+
     string decryptedText = "";
     for (size_t i = 0; i < txt.length(); i += 2) {
         if (i + 1 < txt.length() && isdigit(txt[i]) && isdigit(txt[i + 1])) {
@@ -49,7 +66,9 @@ void decryption(const string& txt, const map<string, char>& reversePolybiusSquar
             decryptedText += txt[i];  
         }
     }
-    cout << "Decrypted Text: " << decryptedText << endl;
+
+    txt = decryptedText;  
+    cout << "Decrypted Text: " << txt << endl;
 }
 
-#endif 
+#endif

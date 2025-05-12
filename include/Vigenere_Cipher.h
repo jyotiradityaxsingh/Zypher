@@ -1,11 +1,11 @@
-#ifndef VIGENERE_CIPHER
-#define VIGENERE_CIPHER
+#ifndef VIGENERE_CIPHER_H
+#define VIGENERE_CIPHER_H
 #include<iostream>
 #include<string>
 
 using namespace std;
 
-void encryption(string &txt, const string &key) {
+void vigenereEncrypt(string &txt, const string &key) {
     int keyIndex = 0;
     for (int i = 0; i < txt.length(); i++) {
         if (isalpha(txt[i])) {  
@@ -21,7 +21,7 @@ void encryption(string &txt, const string &key) {
     cout << "Encrypted Text: " << txt << endl;
 }
 
-void decryption(string &txt, const string &key) {
+void vigenereDecrypt(string &txt, const string &key) {
     int keyIndex = 0;
     for (int i = 0; i < txt.length(); i++) {
         if (isalpha(txt[i])) {  
